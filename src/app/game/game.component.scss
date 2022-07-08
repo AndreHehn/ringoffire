@@ -14,7 +14,7 @@
 
     img {
         position: absolute;
-        width: 120px;
+        width: 140px;
     }
 }
 
@@ -28,13 +28,14 @@
 }
 
 .played-cards{
+
     right: 25px;
-    transform: scale(1.3) translateX(140px) translateY(-180px) rotate(-10deg);
+    transform: scale(1.0) translateX(150px) translateY(-220px) rotate(-10deg);
 }
 
 .pick-card {
     animation: pick-card-animation 1s ease-in-out;
-    transform: scale(1.3) translateX(140px) translateY(-180px) rotate(-10deg);
+    transform: scale(1.3) translateX(150px) translateY(-220px) rotate(-10deg);
 }
 
 @keyframes pick-card-animation {
@@ -64,7 +65,7 @@
 .button-add{
     position: absolute;
     right:32px;
-    bottom:32px;
+    bottom:48px;
 }
 .info-text{
     position: absolute;
