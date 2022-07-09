@@ -1,5 +1,5 @@
 .player {
-    width: 300px;
+    width: 250px;
     display: flex;
     align-items: center;
     background-color: rgb(180,180,180);
@@ -7,7 +7,6 @@
     border-bottom-left-radius: 50px;
 
     span {
-
         font-size: 32px;
         margin-left: 16px;
     }
@@ -21,4 +20,9 @@
 }
 .player-active{
     background-color: orange !important;
+    width: 300px;
+    img {
+        height: 80px;
+        width: 80px;
+    }
 }

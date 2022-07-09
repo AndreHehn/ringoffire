@@ -1,12 +1,22 @@
 <h1 mat-dialog-title>Add new player</h1>
-<div mat-dialog-content>
+<div mat-dialog-content [formGroup]="form">
     <p>What's your name?</p>
     <mat-form-field appearance="fill">
         <mat-label>Name:</mat-label>
-        <input matInput [(ngModel)]="name">
+        <input matInput required formControlName="name">
     </mat-form-field>
+    <p>Choose a profile picture</p>
+    <div class="profilepic-wrap">
+        <label *ngFor="let profile of profiles; let i=index;">
+            <input type="radio" name="profile" [value]="profile" formControlName="profile">
+            <img [class.selected]="form.value.profile==profile"
+                src="assets/img/profile/{{ profile }}">
+        </label>
+    </div>
+
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [disabled]="name.length == 0" [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+    <button mat-button [disabled]="form.value.name.length == 0 || form.value.profilePicture==''"
+        [mat-dialog-close]="form.value" cdkFocusInitial>Ok</button>
 </div>
