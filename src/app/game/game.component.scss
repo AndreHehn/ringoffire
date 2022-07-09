@@ -8,6 +8,15 @@
     align-items: center;
 }
 
+app-player,
+app-player-mobile {
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.15);
+    }
+}
+
 .card-stack {
     position: relative;
 
@@ -58,7 +67,7 @@
 
 
 .scroll-mobile {
-  
+
     position: absolute;
     left: 0;
     right: 0;

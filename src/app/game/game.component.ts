@@ -4,6 +4,7 @@ import { MatDialog, } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
+import { EditPlayerComponent } from '../edit-player/edit-player.component';
 
 @Component({
   selector: 'app-game',
@@ -80,6 +81,13 @@ export class GameComponent implements OnInit {
       .doc(this.gameId).update(this.game.toJson());
   }
 
-
+  editPlayer(playerId: number) { 
+    const dialogRef = this.dialog.open(EditPlayerComponent);
+    dialogRef.afterClosed().subscribe((form: object) => {
+      this.game.players[playerId]['name'] = form['name'];
+      this.game.players[playerId]['profile']= form['profile'];
+      this.saveGame();
+    });
+  }
 }
 
