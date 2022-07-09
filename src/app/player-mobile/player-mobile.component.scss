@@ -1,0 +1,41 @@
+.player {
+    height: 200px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(180, 180, 180);
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    width: 50px;
+    position: relative;
+
+    span {
+        transform: rotate(90deg);
+        font-size: 24px;
+        position: absolute;
+        bottom: 110px;
+    }
+
+    img {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+}
+
+.player-active {
+    background-color: orange !important;
+    height: 220px;
+    width: 60px;
+
+    span {
+
+        bottom: 120px;
+    }
+    img {
+        height: 60px;
+        width: 60px;
+    }
+}

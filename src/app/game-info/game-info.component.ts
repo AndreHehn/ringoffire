@@ -15,9 +15,9 @@ export class GameInfoComponent implements OnInit {
     { title: 'Chicks', description: 'All girls drink.' },
     { title: 'Heaven', description: 'Put your hands up! The last player drinks!' },
     { title: 'Mate', description: 'Pick a mate. Your mate must always drink when you drink and the other way around.' },
-    { title: 'Thumbmaster', description: '' },
+    { title: 'Thumbmaster', description: 'The player who drew the card must put their thumb on the table at a chosen time (within the next 5 picks). The last person to put their thumb on the table must drink.' },
     { title: 'Men', description: 'All men drink.' },
-    { title: 'Quizmaster', description: '' },
+    { title: 'Quizmaster', description: 'Make a rule. The player who drew the card makes a new rule.Snyone who breaks the rule at any time throughout the rest of the game has to drink ' },
     { title: 'Never have i ever...', description: 'Say something you nnever did. Everyone who did it has to drink.' },
     { title: 'Rule', description: 'Make a rule. Everyone needs to drink when he breaks the rule.' },
   ];

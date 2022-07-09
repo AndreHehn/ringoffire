@@ -1,0 +1,13 @@
+.info {
+    text-align: center;
+}
+.media-height {
+    height: 150px;
+}  
+
+
+@media only screen and (max-width:280px) {
+    .media-height {
+        height: 170px;
+    }  
+}

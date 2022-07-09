@@ -3,12 +3,12 @@
     <p>What's your name?</p>
     <mat-form-field appearance="fill">
         <mat-label>Name:</mat-label>
-        <input matInput required formControlName="name">
+        <input matInput maxlength ="10" required formControlName="name">
     </mat-form-field>
     <p>Choose a profile picture</p>
     <div class="profilepic-wrap">
         <label *ngFor="let profile of profiles; let i=index;">
-            <input type="radio" name="profile" [value]="profile" formControlName="profile">
+            <input type="radio" name="profile"  [value]="profile" formControlName="profile">
             <img [class.selected]="form.value.profile==profile"
                 src="assets/img/profile/{{ profile }}">
         </label>

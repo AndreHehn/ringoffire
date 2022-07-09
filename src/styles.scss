@@ -11,3 +11,15 @@ body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+@media only screen and (max-width:720px) {
+    .hide-desktop {
+        display: none;
+    }
+}
+
+@media only screen and (min-width:720px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}

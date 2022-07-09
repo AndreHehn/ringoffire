@@ -26,7 +26,7 @@
     }
 }
 
-.played-cards{
+.played-cards {
     right: 25px;
     transform: scale(1.0) translateX(150px) translateY(-220px) rotate(-10deg);
 }
@@ -35,6 +35,8 @@
     animation: pick-card-animation 1s ease-in-out;
     transform: scale(1.3) translateX(150px) translateY(-220px) rotate(-10deg);
 }
+
+
 
 @keyframes pick-card-animation {
     0% {
@@ -50,24 +52,125 @@
     }
 
     100% {
-        transform: scale(1.0) translateX(140px) translateY(-180px) rotate(-10deg);
+        transform: scale(1.0) translateX(150px) translateY(-220px) rotate(-10deg);
     }
 }
 
-.avatar-postion{
+
+.scroll-mobile {
+  
     position: absolute;
-    right:0;
-    z-index:1;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+
+    app-player-mobile {
+        margin-left: 8px;
+    }
 }
 
-.button-add{
+.avatar-postion {
     position: absolute;
-    right:32px;
-    bottom:48px;
+    right: 0;
+    z-index: 1;
 }
-.info-text{
+
+.button-add {
+    z-index: 1;
     position: absolute;
-    left: 100px;
-    right:100px;
-    bottom: 32px;
+    right: 32px;
+    bottom: 12px;
+}
+
+.info-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.d-none {
+    display: none;
+}
+
+@media only screen and(max-width:1023px) {
+
+    .button-add {
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .card-stack {
+        position: relative;
+        margin-bottom: 100px;
+    }
+
+    .played-cards {
+        transform: scale(1.0) translateX(180px) translateY(-20px) rotate(-10deg);
+    }
+
+    .pick-card {
+        animation: pick-card-animation 1s ease-in-out;
+        transform: scale(1.3) translateX(180px) translateY(-20px) rotate(-10deg);
+    }
+
+
+    @keyframes pick-card-animation {
+        0% {
+            transform: scale(1);
+        }
+
+        40% {
+            transform: scale(1.2) translateY(-20px);
+        }
+
+        60% {
+            transform: scale(1.2) translateY(-20px);
+        }
+
+        100% {
+            transform: scale(1.0) translateX(180px) translateY(-20px) rotate(-10deg);
+        }
+    }
+}
+
+@media only screen and (max-width:281px) {
+    .card-stack {
+        img {
+            width: 100px;
+        }
+    }
+
+    .played-cards {
+        right: 25px;
+        width: 100px;
+        transform: scale(1.0) translateX(140px) translateY(-20px) rotate(-10deg);
+    }
+
+    .pick-card {
+        animation: pick-card-animation 1s ease-in-out;
+        transform: scale(1.3) translateX(140px) translateY(-20px) rotate(-10deg);
+    }
+
+    @keyframes pick-card-animation {
+        0% {
+            transform: scale(1);
+        }
+
+        40% {
+            transform: scale(1.7);
+        }
+
+        60% {
+            transform: scale(1.7);
+        }
+
+        100% {
+            transform: scale(1.0) translateX(140px) translateY(-20px) rotate(-10deg);
+        }
+    }
 }
