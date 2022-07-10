@@ -75,10 +75,15 @@ app-player-mobile {
     overflow-x: scroll;
     overflow-y: hidden;
     display: flex;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
     app-player-mobile {
         margin-left: 8px;
     }
+}
+.scroll-mobile::-webkit-scrollbar {
+    display: none;
 }
 
 .avatar-postion {
@@ -91,7 +96,7 @@ app-player-mobile {
     z-index: 1;
     position: absolute;
     right: 32px;
-    bottom: 12px;
+    bottom: 32px;
 }
 
 .info-text {
@@ -99,7 +104,6 @@ app-player-mobile {
     left: 0;
     right: 0;
     bottom: 0;
-
 }
 
 .d-none {
@@ -147,7 +151,7 @@ app-player-mobile {
     }
 }
 
-@media only screen and (max-width:281px) {
+@media only screen and (max-width:349px) {
     .card-stack {
         img {
             width: 100px;
@@ -155,14 +159,13 @@ app-player-mobile {
     }
 
     .played-cards {
-        right: 25px;
-        width: 100px;
-        transform: scale(1.0) translateX(140px) translateY(-20px) rotate(-10deg);
+        right: 25px !important;
+        width: 100px !important;
+        transform: scale(1.0) translateX(140px) translateY(-20px) rotate(-10deg) !important;
     }
 
     .pick-card {
-        animation: pick-card-animation 1s ease-in-out;
-        transform: scale(1.3) translateX(140px) translateY(-20px) rotate(-10deg);
+        transform: scale(1.3) translateX(140px) translateY(-20px) rotate(-10deg) !important;
     }
 
     @keyframes pick-card-animation {
@@ -179,7 +182,42 @@ app-player-mobile {
         }
 
         100% {
-            transform: scale(1.0) translateX(140px) translateY(-20px) rotate(-10deg);
+            transform: scale(1.0) translateX(140px) translateY(-20px) rotate(-10deg) !important;
         }
     }
+}
+
+@media only screen and (max-height:700px){
+    .card-stack {
+        margin-bottom: 140px;
+    }
+    .played-cards {
+
+
+        transform: scale(1.0) translateX(180px) translateY(-20px) rotate(-10deg);
+    }
+
+    .pick-card {
+        animation: pick-card-animation 1s ease-in-out;
+        transform: scale(1.3) translateX(180px) translateY(-20px) rotate(-10deg);
+    }
+
+    @keyframes pick-card-animation {
+        0% {
+            transform: scale(1);
+        }
+
+        40% {
+            transform: scale(1.7);
+        }
+
+        60% {
+            transform: scale(1.7);
+        }
+
+        100% {
+            transform: scale(1.0) translateX(180px) translateY(-20px) rotate(-10deg);
+        }
+    }
+
 }
