@@ -23,7 +23,9 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     this.newGame();
-
+/**
+ * gets id from URL and loads from firestore
+ */
     this.route.params.subscribe((params) => {
       this.gameId = params['id'];
       this.firestore.collection('games').doc(params['id']).valueChanges().subscribe((game: any) => {
@@ -37,9 +39,11 @@ export class GameComponent implements OnInit {
     });
   }
 
+
   newGame() {
     this.game = new Game();
   }
+
 
   takeCard() {
     if (this.game.stack.length == 0) {
@@ -52,6 +56,7 @@ export class GameComponent implements OnInit {
       this.openDialog();
     }
   };
+
 
   takeValidCard() {
     this.game.currentCard = this.game.stack.pop();
@@ -66,9 +71,9 @@ export class GameComponent implements OnInit {
     }, 1000);
   }
 
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
-
     dialogRef.afterClosed().subscribe((form: object) => {
       this.game.players.push(form);
       this.saveGame();
